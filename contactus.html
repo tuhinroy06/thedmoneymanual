@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#111411",
+                        "on-tertiary": "#571c27",
+                        "primary": "#96d5a3",
+                        "tertiary-fixed-dim": "#ffb2bb",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffd9dc",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e1e3dd",
+                        "secondary-fixed-dim": "#ffba46",
+                        "on-error": "#690005",
+                        "secondary-container": "#c68700",
+                        "primary-container": "#14532d",
+                        "on-secondary-container": "#3e2800",
+                        "surface-bright": "#373a36",
+                        "outline-variant": "#404941",
+                        "surface-container-highest": "#323632",
+                        "on-tertiary-container": "#f79eaa",
+                        "on-primary-fixed-variant": "#12512c",
+                        "secondary-fixed": "#ffddb0",
+                        "on-primary-container": "#87c695",
+                        "on-surface": "#e1e3dd",
+                        "surface-tint": "#96d5a3",
+                        "on-secondary-fixed": "#281800",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#442c00",
+                        "surface-container-high": "#272b27",
+                        "background": "#111411",
+                        "surface-dim": "#111411",
+                        "primary-fixed": "#b1f2be",
+                        "outline": "#8a9389",
+                        "secondary": "#ffba46",
+                        "on-surface-variant": "#c0c9be",
+                        "on-background": "#e1e3dd",
+                        "on-primary": "#00391a",
+                        "surface-container": "#1d201d",
+                        "inverse-primary": "#2e6a41",
+                        "surface-variant": "#323632",
+                        "primary-fixed-dim": "#96d5a3",
+                        "surface-container-low": "#191c19",
+                        "on-secondary-fixed-variant": "#614000",
+                        "inverse-on-surface": "#2e312d",
+                        "on-tertiary-fixed": "#3c0613",
+                        "surface-container-lowest": "#0c0f0c",
+                        "tertiary": "#ffb2bb",
+                        "tertiary-container": "#75333e",
+                        "on-tertiary-fixed-variant": "#73323d",
+                        "on-primary-fixed": "#00210d"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #111411;
+            color: #e1e3dd;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(25, 28, 25, 0.7);
+            backdrop-filter: blur(20px);
+        }
+
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#111411]/80 backdrop-blur-xl shadow-2xl shadow-black/40">
+        <div class="relative flex justify-between items-center w-full px-8 py-4 mx-auto max-w-7xl">
+            <a href="homepageui.html"
+                class="text-2xl font-extrabold tracking-tighter text-[#96d5a3] uppercase hover:scale-105 transition-transform">
+                The Money Manual
+            </a>
+            <div
+                class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-extrabold tracking-tighter absolute left-1/2 -translate-x-1/2">
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="homepageui.html">Home</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors"
+                    href="categorypage.html">Categories</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="about us.html">About</a>
+                <a class="text-[#96d5a3] border-b-2 border-[#96d5a3] pb-1" href="contactus.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="document.getElementById('newsletter-modal').showModal()"
+                    class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-200 active:scale-95 cursor-pointer">
+                    Subscribe
+                </button>
+            </div>
+            <div class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-24 pb-20 px-8">
+            <div class="absolute inset-0 z-0 opacity-20">
+                <div class="absolute inset-0 bg-gradient-to-b from-surface via-transparent to-surface"></div>
+                <img class="w-full h-full object-cover grayscale opacity-50"
+                    data-alt="Abstract architectural lines of a luxury bank headquarters with emerald glass and golden reflections under soft moonlight"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLEeQjUnC97r_0M1TW1IEKRpI7IBRLdIY1gnO68uGkSg8hTRrmMWy4_Q55akCvO2VpYc9cb5qiMRqm6KkrjJpICk9U6hw5GYWUPjMWkDONk16iJvjFT6V9fv7uMYMp9EqJC7fuwxOis2YYj5K7RAy--2LQGfwvor56XSxTAsMzm3jVVsaN1fLxCfr3KwwYrlkEwDKuXgrgwX5dAAdwGN0SeEP-BZTHqeQXZEh1uX8DwmSvo3edKlHeOZ20WdioIO_OPc0wVatxCRpx" />
+            </div>
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div
+                    class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 border border-secondary/30 mb-6">
+                    <span class="text-secondary text-[10px] font-bold tracking-[0.2em] uppercase">Executive
+                        Liaison</span>
+                </div>
+                <h1
+                    class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.9] text-on-surface max-w-4xl">
+                    Connect with the <span class="text-primary italic">Sovereignty</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Our direct line for private inquiries, editorial partnerships, and reader feedback. For those who
+                    demand financial excellence.
+                </p>
+            </div>
+        </section>
+        <!-- Contact Content Grid -->
+        <section class="max-w-7xl mx-auto px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+                <!-- Contact Form Section -->
+                <div class="lg:col-span-7">
+                    <div class="space-y-12">
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-on-surface mb-4">Direct Inquiry</h2>
+                            <p class="text-on-surface-variant">Expected response time: Within 24 business hours.</p>
+                        </div>
+                        <form class="space-y-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold tracking-widest uppercase text-secondary">Full
+                                        Name</label>
+                                    <input
+                                        class="w-full bg-surface-container-high border-none rounded-xl px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/50 placeholder:text-on-surface-variant/30"
+                                        placeholder="Archibald Sterling" type="text" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold tracking-widest uppercase text-secondary">Email
+                                        Address</label>
+                                    <input
+                                        class="w-full bg-surface-container-high border-none rounded-xl px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/50 placeholder:text-on-surface-variant/30"
+                                        placeholder="sovereign@themoneymanual.com" type="email" />
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-[10px] font-bold tracking-widest uppercase text-secondary">Subject</label>
+                                <select
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/50 appearance-none">
+                                    <option>Editorial Inquiry</option>
+                                    <option>Partnership Proposal</option>
+                                    <option>Wealth Management Feedback</option>
+                                    <option>General Support</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[10px] font-bold tracking-widest uppercase text-secondary">Your
+                                    Message</label>
+                                <textarea
+                                    class="w-full bg-surface-container-high border-none rounded-xl px-6 py-4 text-on-surface focus:ring-2 focus:ring-secondary/50 placeholder:text-on-surface-variant/30 resize-none"
+                                    placeholder="How can we assist your financial journey?" rows="6"></textarea>
+                            </div>
+                            <button
+                                class="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-0.5 font-bold transition-all duration-300 hover:scale-[1.02]"
+                                type="submit">
+                                <span
+                                    class="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary-container"></span>
+                                <span
+                                    class="relative flex items-center space-x-3 rounded-full bg-surface-container-lowest px-10 py-4 transition-all duration-200 group-hover:bg-transparent">
+                                    <span class="text-primary group-hover:text-on-primary">Send Message</span>
+                                    <span class="material-symbols-outlined text-secondary group-hover:text-on-primary"
+                                        style="font-variation-settings: 'FILL' 1;">send</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Sidebar Information -->
+                <div class="lg:col-span-5 space-y-12">
+                    <!-- Headquarters Info -->
+                    <div class="bg-surface-container-low p-10 rounded-3xl border-l-4 border-secondary">
+                        <h3 class="text-xl font-extrabold mb-8 text-on-surface">Get In Touch</h3>
+                        <div class="space-y-8">
+                            <div class="flex items-start space-x-6">
+                                <div class="bg-surface-container-highest p-3 rounded-xl">
+                                    <span class="material-symbols-outlined text-primary">alternate_email</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-secondary tracking-widest uppercase mb-1">Digital
+                                    </p>
+                                    <p class="text-on-surface-variant">sovereign@themoneymanual.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stylized Dark Map -->
+                    <div
+                        class="rounded-3xl overflow-hidden grayscale contrast-125 border border-outline-variant/20 shadow-2xl relative h-64 group">
+                        <div class="absolute inset-0 bg-primary/10 mix-blend-overlay z-10"></div>
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                            data-alt="Dark moody top-down map view of Manhattan New York city streets with glowing amber lights and deep forest green shadows"
+                            data-location="New York"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrRH3wo_HwFwKLL2jFujRXsbii2JEZA-xKN1jlCR9OZBbSM-_ma_-21pBALkYXLsoXJvh5Kb-ouHroeM2WIo2LvJN3cJxddHNAn3LPWcXTJ_FAeE5xnWnVEXA8zfuP3r345VhURMo9R7LRpVq4fyTDx0549JZSw05FSz2QyYBXzrzfCSrvotYysnsgoDH8FlLjT0Ne99ztzRPyyfxBSdQrGtOhwXJi0sdh9eGwWf9TdzhQnvMZGv1ddQiR4CUG1x095oW8yC88Wrk3" />
+                        <div class="absolute inset-0 flex items-center justify-center z-20">
+                            <div
+                                class="bg-secondary p-2 rounded-full animate-pulse shadow-[0_0_20px_rgba(255,186,70,0.6)]">
+                                <span class="material-symbols-outlined text-surface text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">location_on</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recognition Banner -->
+        <section class="py-16 bg-surface-container-lowest border-y border-outline-variant/10">
+            <div
+                class="max-w-7xl mx-auto px-8 flex flex-wrap justify-center gap-12 md:gap-24 opacity-30 grayscale hover:opacity-60 transition-opacity">
+                <span class="text-2xl font-black italic">Financial Times</span>
+                <span class="text-2xl font-black italic">The Economist</span>
+                <span class="text-2xl font-black italic">Bloomberg</span>
+                <span class="text-2xl font-black italic">WSJ</span>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full relative mt-20 bg-[#111411]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 border-t border-[#404941]/15 max-w-7xl mx-auto">
+            <div class="md:col-span-1">
+                <a href="homepageui.html"
+                    class="text-lg font-black text-[#96d5a3] uppercase mb-4 tracking-tighter block hover:text-secondary transition-colors">The
+                    Money Manual</a>
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                    Empowering the modern Indian through radical financial transparency and sovereign wealth strategies.
+                </p>
+                <div class="flex gap-4">
+                    <span
+                        class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">rss_feed</span>
+                    <span class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">mail</span>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Explore</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="homepageui.html">Home</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="categorypage.html">Categories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Company</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="about us.html">About Us</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Legal</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="termsofservice.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-12 pb-16 max-w-7xl mx-auto">
+            <p
+                class="text-[10px] text-on-surface-variant/40 leading-relaxed uppercase tracking-widest border-t border-outline-variant/10 pt-10">
+                Disclaimer: The Money Manual is for educational purposes only. We are not SEBI registered advisors. All
+                financial decisions involve risk; please consult a certified professional before making significant
+                investments.
+            </p>
+            <div class="mt-8 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-[#96d5a3]/40">
+                © 2024 The Money Manual. The Digital Sovereign.
+            </div>
+        </div>
+    </footer>
+    <!-- Newsletter Modal -->
+    <dialog id="newsletter-modal"
+        class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto rounded-3xl w-full max-w-lg shadow-2xl transition-all">
+        <div class="bg-surface-container-high rounded-3xl p-8 relative border border-outline-variant/20">
+            <button onclick="document.getElementById('newsletter-modal').close()"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="text-center mb-8">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">mail</span>
+                <h3 class="text-3xl font-extrabold text-on-surface mb-2">Get our weekly tips.</h3>
+                <p class="text-on-surface-variant">Join 10,000+ Indians receiving sovereign financial wisdom.</p>
+            </div>
+            <form class="flex flex-col gap-4"
+                onsubmit="event.preventDefault(); this.classList.add('hidden'); document.getElementById('modal-success').classList.remove('hidden');">
+                <input required
+                    class="bg-surface-container-highest border border-outline-variant/20 rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
+                    placeholder="Your best email address" type="email" />
+                <button type="submit"
+                    class="bg-secondary text-on-secondary py-4 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full cursor-pointer">Subscribe
+                    Now</button>
+                <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold mt-2">Zero
+                    Spam. Unsubscribe Anytime.</p>
+            </form>
+            <div id="modal-success" class="hidden flex-col items-center justify-center py-4 text-center">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
+                <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
+                <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
+                <button
+                    onclick="document.getElementById('newsletter-modal').close(); setTimeout(() => { document.querySelector('#newsletter-modal form').classList.remove('hidden'); document.getElementById('modal-success').classList.add('hidden'); document.querySelector('#newsletter-modal form').reset(); }, 500);"
+                    class="mt-6 text-sm font-bold text-secondary uppercase tracking-widest hover:underline cursor-pointer">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <script>
+        const modal = document.getElementById('newsletter-modal');
+        modal.addEventListener('click', (e) => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
+            }
+        })
+    </script>
+</body>
+
+</html>

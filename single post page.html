@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>How to Start Investing in Your 20s | The Money Manual</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#c0c9be",
+                        "surface-tint": "#96d5a3",
+                        "on-tertiary-container": "#f79eaa",
+                        "primary-fixed-dim": "#96d5a3",
+                        "on-tertiary-fixed": "#3c0613",
+                        "secondary": "#ffba46",
+                        "on-secondary": "#442c00",
+                        "outline": "#8a9389",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#191c19",
+                        "surface-container-highest": "#323632",
+                        "surface-container": "#1d201d",
+                        "tertiary-fixed": "#ffd9dc",
+                        "secondary-fixed": "#ffddb0",
+                        "inverse-surface": "#e1e3dd",
+                        "tertiary": "#ffb2bb",
+                        "primary": "#96d5a3",
+                        "on-secondary-container": "#3e2800",
+                        "primary-fixed": "#b1f2be",
+                        "on-tertiary": "#571c27",
+                        "on-background": "#e1e3dd",
+                        "tertiary-container": "#75333e",
+                        "on-primary-container": "#87c695",
+                        "surface-bright": "#373a36",
+                        "on-primary": "#00391a",
+                        "surface": "#111411",
+                        "on-secondary-fixed": "#281800",
+                        "primary-container": "#14532d",
+                        "surface-container-lowest": "#0c0f0c",
+                        "secondary-fixed-dim": "#ffba46",
+                        "tertiary-fixed-dim": "#ffb2bb",
+                        "surface-container-high": "#272b27",
+                        "secondary-container": "#c68700",
+                        "surface-dim": "#111411",
+                        "inverse-primary": "#2e6a41",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#00210d",
+                        "on-primary-fixed-variant": "#12512c",
+                        "on-secondary-fixed-variant": "#614000",
+                        "inverse-on-surface": "#2e312d",
+                        "on-tertiary-fixed-variant": "#73323d",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "outline-variant": "#404941",
+                        "on-surface": "#e1e3dd",
+                        "surface-variant": "#323632",
+                        "background": "#111411"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .prose h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #96d5a3;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .prose h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e1e3dd;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #c0c9be;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body selection:bg-primary/30 selection:text-primary">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#111411]/80 backdrop-blur-xl shadow-2xl shadow-black/40">
+        <div class="relative flex justify-between items-center w-full px-8 py-4 mx-auto max-w-7xl">
+            <a href="homepageui.html"
+                class="text-2xl font-extrabold tracking-tighter text-[#96d5a3] uppercase font-['Plus_Jakarta_Sans'] hover:scale-105 transition-transform">
+                The Money Manual</a>
+            <div
+                class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-extrabold tracking-tighter absolute left-1/2 -translate-x-1/2">
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="homepageui.html">Home</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors"
+                    href="categorypage.html">Categories</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="about us.html">About</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="contactus.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="document.getElementById('newsletter-modal').showModal()"
+                    class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform active:scale-95 cursor-pointer">Subscribe</button>
+            </div>
+            <div class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </nav>
+    <!-- Full Width Hero Section -->
+    <header class="relative w-full h-[819px] flex items-center justify-center overflow-hidden">
+        <img class="absolute inset-0 w-full h-full object-cover"
+            data-alt="luxury corporate office with gold accents overlooking a modern city skyline at dusk with dramatic lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRonfPDUhTtiKwFbZ5M0sttu2Y0ik9Q8ucuS4eVf0ZRUUHJFIlKb4gVsbYfPJg3-OiVKWr6jgpxYCKklyQ_t00fmtvRGiJsMgbiU0JFWhqBTIVfL4F4L2VG85dQf5sXgJuJbF4qHnAuSnYepL-T56tnoAuKW-tJzK16Ls0mqWVi5gtN3aErX5HvhrrLMmOdpibWqhp8Zh4oc0p7vnd_YKXIsf8jQXieShTKXEuwXqcB3tmhK5SVPyNRROEhm_LLZUthQua-fyXv3m-" />
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+        <div class="relative z-10 max-w-5xl px-8 text-center mt-20">
+            <span
+                class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[0.75rem] font-bold tracking-[0.1em] uppercase mb-6">Wealth
+                Strategy</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-background mb-8 leading-[1.1]">
+                How to Start Investing in Your 20s: A Step-by-Step Guide for Indians
+            </h1>
+            <!-- Author Bar -->
+            <div class="flex flex-wrap items-center justify-center gap-6 py-6 border-y border-outline-variant/15">
+                <div class="flex items-center gap-3">
+                    <img class="w-12 h-12 rounded-full object-cover ring-2 ring-primary"
+                        data-alt="professional portrait of a confident male financial advisor in a dark tailored suit"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5yjgS6BV9Y4jIslj7UAN5NrLrQmvx2pPxvUnfn1MSmCoeqorEo2xE2zhIG-cmS0hZ3Nbdzem8XQFNn0Tdzj4fiT3SkL-qUxyh4uMJKzj7bif_pR1YNkG7F_2vqeWxmlpzZr6YAzWw41776x1gogInBqxFhJV-3FI59h4criAdjCqzmOwWf26HDiIFxBX8_Wdc8koR10pXMPz62fIS_p6N3scMdmPLHr134VFPRUWnx7qA-YIb6RTWa_4sicgWEshUig1wzLC0BpMb" />
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-on-background">The Money Manual Team</div>
+                        <div class="text-xs text-on-surface-variant uppercase tracking-widest">Editorial Board</div>
+                    </div>
+                </div>
+                <div class="h-8 w-px bg-outline-variant/30 hidden sm:block"></div>
+                <div class="text-sm font-medium text-on-surface-variant flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span> Oct 24, 2023
+                </div>
+                <div class="h-8 w-px bg-outline-variant/30 hidden sm:block"></div>
+                <div class="text-sm font-medium text-on-surface-variant flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">schedule</span> 12 min read
+                </div>
+                <div class="flex items-center gap-4 ml-0 sm:ml-4">
+                    <button
+                        class="text-on-surface-variant hover:text-primary transition-colors hover:scale-110 transition-transform"><span
+                            class="material-symbols-outlined">share</span></button>
+                    <button
+                        class="text-on-surface-variant hover:text-primary transition-colors hover:scale-110 transition-transform"><span
+                            class="material-symbols-outlined">bookmark</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-8 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <!-- Article Content Area -->
+            <article class="lg:col-span-8 prose max-w-none">
+                <p class="text-xl font-medium text-on-surface-variant leading-relaxed mb-12 italic">
+                    The compounding effect of starting early is perhaps the most powerful wealth-building tool at your
+                    disposal. For young Indians entering the workforce today, the landscape of investment has never been
+                    more accessible—or more complex.
+                </p>
+                <h2>1. Building Your Financial Fortress</h2>
+                <p>Before you purchase your first stock or mutual fund unit, you must ensure your foundation is solid.
+                    In the Digital Sovereign mindset, wealth is protected before it is grown. This means addressing
+                    high-interest debt and establishing an emergency fund that covers at least 6 months of your living
+                    expenses.</p>
+                <!-- Tip Box -->
+                <div class="my-10 p-8 rounded-xl bg-surface-container-highest border-l-4 border-primary">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+                        <div>
+                            <h4 class="text-primary font-bold mb-2">Pro Sovereign Tip</h4>
+                            <p class="text-on-surface m-0">Park your emergency fund in a Liquid Mutual Fund or a
+                                high-interest savings account. It's not about the returns; it's about the liquidity and
+                                peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>Understanding Indian Asset Classes</h3>
+                <p>Diversification is the bedrock of risk management. For the Indian investor in their 20s, the ideal
+                    portfolio often balances aggressive growth with stable anchors:</p>
+                <ul class="space-y-4 text-on-surface-variant mb-10">
+                    <li><strong class="text-primary">Equity Mutual Funds:</strong> The growth engine for long-term
+                        wealth.</li>
+                    <li><strong class="text-primary">Public Provident Fund (PPF):</strong> A sovereign-backed, tax-free
+                        retirement vehicle.</li>
+                    <li><strong class="text-primary">Digital Gold:</strong> A modern hedge against inflation.</li>
+                    <li><strong class="text-primary">Direct Equity:</strong> High risk, high reward for informed
+                        investors.</li>
+                </ul>
+                <!-- Mid-article Capture -->
+                <div
+                    class="my-16 p-10 rounded-2xl bg-gradient-to-br from-primary-container to-surface-container-low relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="mt-0 text-white">Join the Sovereign Circle</h3>
+                        <p class="text-on-primary-container mb-6">Get weekly market insights and wealth strategies
+                            delivered to your inbox. No fluff, just alpha.</p>
+                        <form class="flex flex-col sm:flex-row gap-4">
+                            <input
+                                class="flex-grow bg-surface/50 border-none rounded-lg px-6 py-4 focus:ring-2 focus:ring-secondary text-on-surface"
+                                placeholder="Your executive email address" type="email" />
+                            <button
+                                class="bg-secondary text-on-secondary font-bold px-8 py-4 rounded-lg hover:scale-105 transition-transform"
+                                type="submit">Get Access</button>
+                        </form>
+                    </div>
+                    <div class="absolute -right-10 -bottom-10 opacity-10">
+                        <span class="material-symbols-outlined text-[12rem]">account_balance</span>
+                    </div>
+                </div>
+                <h2>2. The Power of SIP (Systematic Investment Plan)</h2>
+                <p>Consistency beats intensity. Setting up a monthly SIP into a Nifty 50 Index Fund removes the
+                    psychological hurdle of market timing. For a 22-year-old, a monthly investment of ₹10,000 can grow
+                    significantly over three decades, assuming a conservative 12% CAGR.</p>
+                <!-- Warning Box -->
+                <div class="my-10 p-8 rounded-xl bg-error-container/20 border-l-4 border-error">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-error text-3xl">warning</span>
+                        <div>
+                            <h4 class="text-error font-bold mb-2">Critical Warning</h4>
+                            <p class="text-on-surface m-0">Avoid "Hot Tips" from social media influencers. Legitimate
+                                wealth is built through disciplined systems, not speculative gambling on penny stocks or
+                                unproven crypto assets.</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>Tax Efficiency: Section 80C and Beyond</h3>
+                <p>In India, what you keep is as important as what you earn. Utilize ELSS (Equity Linked Savings
+                    Schemes) to hit your 80C limits while remaining invested in the equity market. The lock-in period of
+                    3 years actually serves as a forced discipline for young investors.</p>
+                <!-- Info Box -->
+                <div class="my-10 p-8 rounded-xl bg-secondary-container/10 border-l-4 border-secondary">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-secondary text-3xl">info</span>
+                        <div>
+                            <h4 class="text-secondary font-bold mb-2">Key Definition: CAGR</h4>
+                            <p class="text-on-surface m-0 font-medium">Compound Annual Growth Rate (CAGR) is the mean
+                                annual growth rate of an investment over a specified period of time longer than one
+                                year.</p>
+                        </div>
+                    </div>
+                </div>
+                <p>Wealth creation is a marathon, not a sprint. By starting in your 20s, you are granting yourself the
+                    luxury of time—the one asset that even the wealthiest cannot buy back.</p>
+            </article>
+            <!-- Sticky Sidebar -->
+            <aside class="lg:col-span-4">
+                <div class="sticky top-32 space-y-12">
+                    <!-- Table of Contents -->
+                    <div class="bg-surface-container-low p-8 rounded-2xl shadow-xl shadow-black/20">
+                        <h4 class="text-xs font-black uppercase tracking-[0.2em] text-primary mb-6">On this page</h4>
+                        <nav class="space-y-4">
+                            <a class="block text-primary font-bold border-l-2 border-primary pl-4 transition-all"
+                                href="#">1. Financial Fortress</a>
+                            <a class="block text-on-surface-variant hover:text-on-surface hover:pl-2 transition-all pl-4 border-l-2 border-outline-variant/30"
+                                href="#">Indian Asset Classes</a>
+                            <a class="block text-on-surface-variant hover:text-on-surface hover:pl-2 transition-all pl-4 border-l-2 border-outline-variant/30"
+                                href="#">2. The Power of SIP</a>
+                            <a class="block text-on-surface-variant hover:text-on-surface hover:pl-2 transition-all pl-4 border-l-2 border-outline-variant/30"
+                                href="#">Tax Efficiency (80C)</a>
+                            <a class="block text-on-surface-variant hover:text-on-surface hover:pl-2 transition-all pl-4 border-l-2 border-outline-variant/30"
+                                href="#">Final Verdict</a>
+                        </nav>
+                    </div>
+                    <!-- Recommended Reading Card -->
+                    <div class="bg-surface-container-highest p-8 rounded-2xl relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <h4 class="text-secondary font-bold mb-2">Premium Masterclass</h4>
+                            <p class="text-sm text-on-surface-variant mb-6">Master the Art of Sovereign Investing with
+                                our deep-dive video series.</p>
+                            <button
+                                class="w-full py-3 rounded-lg bg-surface-bright text-on-surface font-bold hover:bg-primary hover:text-on-primary transition-all">Explore
+                                Gold Tier</button>
+                        </div>
+                        <span
+                            class="material-symbols-outlined absolute -right-4 -top-4 text-8xl text-secondary/5 group-hover:scale-110 transition-transform">military_tech</span>
+                    </div>
+                    <!-- Trending Widget -->
+                    <div class="space-y-6">
+                        <h4 class="text-xs font-black uppercase tracking-[0.2em] text-primary">Trending Now</h4>
+                        <div class="flex gap-4 items-center">
+                            <span class="text-2xl font-black text-outline-variant/30 italic">01</span>
+                            <p
+                                class="text-sm font-bold text-on-surface hover:text-primary cursor-pointer transition-colors">
+                                Why Real Estate is Losing its Shine for Gen Z</p>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <span class="text-2xl font-black text-outline-variant/30 italic">02</span>
+                            <p
+                                class="text-sm font-bold text-on-surface hover:text-primary cursor-pointer transition-colors">
+                                The Digital Rupee: Everything You Need to Know</p>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <span class="text-2xl font-black text-outline-variant/30 italic">03</span>
+                            <p
+                                class="text-sm font-bold text-on-surface hover:text-primary cursor-pointer transition-colors">
+                                Credit Card Hacks for High-End Travel</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- Related Posts Section -->
+        <section class="mt-32 pt-20 border-t border-outline-variant/15">
+            <h2 class="text-3xl font-extrabold tracking-tight text-on-background mb-12">Continue Your Journey</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Related Card 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="abstract financial data chart in glowing neon green lines against a dark digital grid background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU-58QQfG59cfw8PEwcDa_nx4gfu1tImObKZWHowtoqaKKgG9b5JLw2HzJQg5-XhkFqOPhRSBRIK1Jk1msQ3IURgRhxNvgBPkeyscIvpJoiaHjZ6xctEjVTLYgkwgyfkyBcnST-Kptqslm8jCIAUrGDxbPLupCkVVRP62W8OqMNQThEzfcar-ICU6RBNGVDctSLgLKz24p2Kxbw5EsiNW9QEA58bmjVEDKxLa9V3dFltzR1B-1yyuOpLvU-07FDlV9LZwAn4mT1ypS" />
+                    </div>
+                    <span class="text-[0.65rem] font-bold text-secondary uppercase tracking-widest">Market
+                        Insights</span>
+                    <h4 class="text-lg font-bold text-on-background mt-2 group-hover:text-primary transition-colors">The
+                        Nifty 50 Outlook: What to Expect in 2024</h4>
+                </div>
+                <!-- Related Card 2 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="neatly stacked gold coins on a dark reflective surface with golden lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYMC95lf6a4_FkrvLYa9GtCl1Kpjk2IMyziwKPgee4Cfer2AE2v8erinwvo6a8GFVRW6typabcrsBBbsSYG83WBlkYc_GOA9GpbeHQO_1TCqc3PomIVCaIdsl5N79qRn19S82Z1oUzPufuAufWXHb3LqpLz_J1eQWlCCZBYv3PrU44UNykPEYQvs0e2tdE3eZagxaO4t50G1Yb4Ok7hOgR4VI_SLQ1kQnMllruNxr-6sbyaVpdj8E0sHlMXzh1qRrH5E2dYvB9LEXv" />
+                    </div>
+                    <span class="text-[0.65rem] font-bold text-secondary uppercase tracking-widest">Wealth
+                        Strategy</span>
+                    <h4 class="text-lg font-bold text-on-background mt-2 group-hover:text-primary transition-colors">
+                        Maximizing Your PPF: The Unseen Tax Benefits</h4>
+                </div>
+                <!-- Related Card 3 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-video rounded-2xl overflow-hidden mb-6">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="close up of currency symbols and digital binary code projected onto a dark textured surface"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJPmGSphmvZStUfmubKmZoM2xsDGk4ESRy71eqcSCPP4UseXbI4WWo9Lq-QQ2BNHFdhm1eZfQjL9p692l9iq3PypvkvZiwu_32Zisvm9qmpGsH5MnrPFhfGtbGFsE9eYNCKoKHDbIrJvSc7hl7c0wXB__q1vZXOXy9bGUilNEQvbtsy29cNa3bdKtobmG2FinHQsacacHtXbUUrm3FNBDWJqzJ7muxuOrVnJVrCfkZ06XFI1yb970E83xQMXCRCwmLimdSjuCdzfO" />
+                    </div>
+                    <span class="text-[0.65rem] font-bold text-secondary uppercase tracking-widest">Tech Pulse</span>
+                    <h4 class="text-lg font-bold text-on-background mt-2 group-hover:text-primary transition-colors">AI
+                        in Personal Finance: Tools for the Modern Sovereign</h4>
+                </div>
+            </div>
+        </section>
+        <!-- Comment Section -->
+        <section class="mt-32 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-on-background mb-8 flex items-center gap-4">
+                Discussion <span
+                    class="text-sm font-normal text-on-surface-variant bg-surface-container-highest px-3 py-1 rounded-full">12
+                    Comments</span>
+            </h2>
+            <div class="bg-surface-container-low p-8 rounded-2xl mb-12">
+                <textarea
+                    class="w-full bg-surface-container-high border-none rounded-xl p-4 text-on-surface placeholder:text-outline-variant focus:ring-2 focus:ring-primary mb-4"
+                    placeholder="Join the dialogue..." rows="3"></textarea>
+                <div class="flex justify-end">
+                    <button
+                        class="bg-primary text-on-primary font-bold px-8 py-3 rounded-full hover:scale-105 transition-transform">Post
+                        Comment</button>
+                </div>
+            </div>
+            <div class="space-y-10">
+                <div class="flex gap-6">
+                    <img class="w-12 h-12 rounded-full object-cover"
+                        data-alt="minimalist studio portrait of a young man with a neutral expression"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVh6qrUj6NPUo9_oYnpA6lJEAghIAelc88yhweLRH1DoSGhP0yciP_KyyVEaC0X4uijVYGr_31j776cDYJIClmgyHglPfYSpEz0qpimwN_A0ysBSM4PQc7eqsveZghifSSAewHKCw9ij_b1KD_bMO3WTb2D6ZLClpr_xnB5GkJNZyJG5kIocfdNG6hOendA56y8Ua-Y2vqwJN5g3gyb24mUo2mFjcdA-r_Gx4Orn9jkD9CaU6hgR0QSaPvQRq4_gP5eMpHwhFBSeuN" />
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="font-bold text-on-background">Arjun Mehta</span>
+                            <span class="text-xs text-on-surface-variant">2 hours ago</span>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed">Excellent breakdown. I started my SIP last
+                            year after reading your guide on index funds. The discipline is definitely paying off.</p>
+                        <div class="flex items-center gap-6 mt-4">
+                            <button
+                                class="flex items-center gap-2 text-xs text-on-surface-variant hover:text-primary"><span
+                                    class="material-symbols-outlined text-sm">thumb_up</span> 24</button>
+                            <button
+                                class="flex items-center gap-2 text-xs text-on-surface-variant hover:text-primary">Reply</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Threaded Reply -->
+                <div class="flex gap-6 ml-16">
+                    <img class="w-10 h-10 rounded-full object-cover"
+                        data-alt="portrait of a young professional woman smiling warmly in soft outdoor lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuT48CEonGhkXOI4Lmix2zBNVvrvyeYWrcZXVzAV6g8-bDWxAsQ-jSxZdRq-4ggIQervTiwwIS7sawL-MyWHKdcqOwv8KQ6H4Pis27qT4wjEfs0gt_9cPdlsgOfhS-uMOqYWNOtkGRyIZ1PKxGVJn7P6afAL8g76OMilb0uBkOKcHNFl8FGXnoCct6PUFBhGllENilQvj1oMLe6KNn4ec0Nnu7s9flGtOH0CZqlKJP79RdNot9m7pfJ9Gv8xxqDlQomSM0LO35O_0t" />
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="font-bold text-on-background">Priya Sharma</span>
+                            <span class="text-xs text-on-surface-variant">45 mins ago</span>
+                        </div>
+                        <p class="text-on-surface-variant leading-relaxed">Agreed! The ELSS tip is huge. People often
+                            forget the tax savings are essentially immediate ROI.</p>
+                        <div class="flex items-center gap-6 mt-4">
+                            <button
+                                class="flex items-center gap-2 text-xs text-on-surface-variant hover:text-primary"><span
+                                    class="material-symbols-outlined text-sm">thumb_up</span> 8</button>
+                            <button
+                                class="flex items-center gap-2 text-xs text-on-surface-variant hover:text-primary">Reply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full relative mt-20 bg-[#111411]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 border-t border-[#404941]/15 max-w-7xl mx-auto">
+            <div class="md:col-span-1">
+                <a href="homepageui.html"
+                    class="text-lg font-black text-[#96d5a3] uppercase mb-4 tracking-tighter block hover:text-secondary transition-colors">The
+                    Money Manual</a>
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                    Empowering the modern Indian through radical financial transparency and sovereign wealth strategies.
+                </p>
+                <div class="flex gap-4">
+                    <span
+                        class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">rss_feed</span>
+                    <span class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">mail</span>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Explore</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="homepageui.html">Home</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="categorypage.html">Categories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Company</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="about us.html">About Us</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Legal</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="termsofservice.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-12 pb-16 max-w-7xl mx-auto">
+            <p
+                class="text-[10px] text-on-surface-variant/40 leading-relaxed uppercase tracking-widest border-t border-outline-variant/10 pt-10">
+                Disclaimer: The Money Manual is for educational purposes only. We are not SEBI registered advisors. All
+                financial decisions involve risk; please consult a certified professional before making significant
+                investments.
+            </p>
+            <div class="mt-8 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-[#96d5a3]/40">
+                © 2024 The Money Manual. The Digital Sovereign.
+            </div>
+        </div>
+    </footer>
+    <!-- Newsletter Modal -->
+    <dialog id="newsletter-modal"
+        class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto rounded-3xl w-full max-w-lg shadow-2xl transition-all">
+        <div class="bg-surface-container-high rounded-3xl p-8 relative border border-outline-variant/20">
+            <button onclick="document.getElementById('newsletter-modal').close()"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="text-center mb-8">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">mail</span>
+                <h3 class="text-3xl font-extrabold text-on-surface mb-2">Get our weekly tips.</h3>
+                <p class="text-on-surface-variant">Join 10,000+ Indians receiving sovereign financial wisdom.</p>
+            </div>
+            <form class="flex flex-col gap-4"
+                onsubmit="event.preventDefault(); this.classList.add('hidden'); document.getElementById('modal-success').classList.remove('hidden');">
+                <input required
+                    class="bg-surface-container-highest border border-outline-variant/20 rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
+                    placeholder="Your best email address" type="email" />
+                <button type="submit"
+                    class="bg-secondary text-on-secondary py-4 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full cursor-pointer">Subscribe
+                    Now</button>
+                <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold mt-2">Zero
+                    Spam. Unsubscribe Anytime.</p>
+            </form>
+            <div id="modal-success" class="hidden flex-col items-center justify-center py-4 text-center">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
+                <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
+                <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
+                <button
+                    onclick="document.getElementById('newsletter-modal').close(); setTimeout(() => { document.querySelector('#newsletter-modal form').classList.remove('hidden'); document.getElementById('modal-success').classList.add('hidden'); document.querySelector('#newsletter-modal form').reset(); }, 500);"
+                    class="mt-6 text-sm font-bold text-secondary uppercase tracking-widest hover:underline cursor-pointer">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <script>
+        const modal = document.getElementById('newsletter-modal');
+        modal.addEventListener('click', (e) => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
+            }
+        })
+    </script>
+</body>
+
+</html>

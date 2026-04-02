@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Money Manual | The Digital Sovereign</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#c0c9be",
+                        "surface-tint": "#96d5a3",
+                        "on-tertiary-container": "#f79eaa",
+                        "primary-fixed-dim": "#96d5a3",
+                        "on-tertiary-fixed": "#3c0613",
+                        "secondary": "#ffba46",
+                        "on-secondary": "#442c00",
+                        "outline": "#8a9389",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#191c19",
+                        "surface-container-highest": "#323632",
+                        "surface-container": "#1d201d",
+                        "tertiary-fixed": "#ffd9dc",
+                        "secondary-fixed": "#ffddb0",
+                        "inverse-surface": "#e1e3dd",
+                        "tertiary": "#ffb2bb",
+                        "primary": "#96d5a3",
+                        "on-secondary-container": "#3e2800",
+                        "primary-fixed": "#b1f2be",
+                        "on-tertiary": "#571c27",
+                        "on-background": "#e1e3dd",
+                        "tertiary-container": "#75333e",
+                        "on-primary-container": "#87c695",
+                        "surface-bright": "#373a36",
+                        "on-primary": "#00391a",
+                        "surface": "#111411",
+                        "on-secondary-fixed": "#281800",
+                        "primary-container": "#14532d",
+                        "surface-container-lowest": "#0c0f0c",
+                        "secondary-fixed-dim": "#ffba46",
+                        "tertiary-fixed-dim": "#ffb2bb",
+                        "surface-container-high": "#272b27",
+                        "secondary-container": "#c68700",
+                        "surface-dim": "#111411",
+                        "inverse-primary": "#2e6a41",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#00210d",
+                        "on-primary-fixed-variant": "#12512c",
+                        "on-secondary-fixed-variant": "#614000",
+                        "inverse-on-surface": "#2e312d",
+                        "on-tertiary-fixed-variant": "#73323d",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "outline-variant": "#404941",
+                        "on-surface": "#e1e3dd",
+                        "surface-variant": "#323632",
+                        "background": "#111411"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#111411]/80 backdrop-blur-xl shadow-2xl shadow-black/40">
+        <div class="relative flex justify-between items-center w-full px-8 py-4 mx-auto max-w-7xl">
+            <a href="homepageui.html"
+                class="text-2xl font-extrabold tracking-tighter text-[#96d5a3] uppercase hover:scale-105 transition-transform">
+                The Money Manual
+            </a>
+            <div
+                class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-extrabold tracking-tighter absolute left-1/2 -translate-x-1/2">
+                <a class="text-[#96d5a3] border-b-2 border-[#96d5a3] pb-1" href="homepageui.html">Home</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors"
+                    href="categorypage.html">Categories</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="about us.html">About</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="contactus.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="document.getElementById('newsletter-modal').showModal()"
+                    class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-200 active:scale-95 no-underline cursor-pointer">
+                    Subscribe
+                </button>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[870px] flex items-center overflow-hidden px-8">
+            <!-- Asymmetric Background Element -->
+            <div class="absolute inset-0 z-0">
+                <div
+                    class="absolute top-0 right-0 w-2/3 h-full opacity-30 bg-gradient-to-l from-primary-container/40 to-transparent">
+                </div>
+                <img class="w-full h-full object-cover opacity-20 grayscale mix-blend-luminosity"
+                    data-alt="Abstract macro shot of high-end currency textures and digital market data glowing with deep forest green and gold ambient lighting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbGNtxOSGBcpfw7PbXVnG7qrzdtSkh-FRozrvjuQr2ynFxH3qdtRAjOJgJLk_WHdWD34ZMHiaI7IT31lDnu5GFYu91nLFeIGyZHe6Cp9uqf78NJRJxmAU8nDta7X9CsXDLyuauVgA1am1GZzI92XBCFhCcXqzZtKCMsM-9T3KEAcVq1we2wnFqD4wrOpk7QrbQGPbpkOp3iD3W4W0RngpI3A4ICwgZakL7-OxZlcEeUjDapVCsceA4thi8GMrKLTCkPPEaHplD20q_" />
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8">
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-on-surface mb-6 leading-[0.9]">
+                        TAKE CONTROL <br />
+                        <span class="text-primary italic">OF YOUR MONEY</span> <br />
+                        IN 2026
+                    </h1>
+                    <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-medium mb-10 leading-relaxed">
+                        Simple, practical financial advice for everyday Indians who want to build generational wealth
+                        through sovereign strategies.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#featured"
+                            class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-full font-extrabold text-lg shadow-2xl shadow-primary/20 hover:scale-105 transition-transform text-center no-underline">
+                            Start Reading
+                        </a>
+                        <a href="#newsletter"
+                            class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-full font-extrabold text-lg border border-outline-variant/15 hover:scale-105 transition-transform text-center no-underline">
+                            Free Money Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Trust Bar -->
+        <section class="bg-surface-container-low py-12 px-8 border-y border-outline-variant/10">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-8">
+                <div class="flex items-center gap-4">
+                    <span class="text-secondary font-black text-2xl">10,000+</span>
+                    <span class="text-label-md uppercase tracking-[0.2em] text-on-surface-variant font-bold">Loyal
+                        Readers</span>
+                </div>
+                <div class="h-8 w-px bg-outline-variant/30 hidden md:block"></div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-primary" data-icon="update">update</span>
+                    <span class="text-label-md uppercase tracking-[0.2em] text-on-surface-variant font-bold">Updated
+                        Weekly</span>
+                </div>
+                <div class="h-8 w-px bg-outline-variant/30 hidden md:block"></div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-secondary"
+                        data-icon="verified_user">verified_user</span>
+                    <span class="text-label-md uppercase tracking-[0.2em] text-on-surface-variant font-bold">100% Free
+                        Advice</span>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Posts (Bento Style Card Grid) -->
+        <section id="featured" class="py-32 px-8 max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <span class="text-secondary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The
+                        Intelligence</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter">Featured Insights</h2>
+                </div>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary-fixed transition-colors"
+                    href="#">View All Archive</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Large Featured Card -->
+                <div class="md:col-span-8 group cursor-pointer">
+                    <div
+                        class="bg-surface-container-low rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-black/60 border border-outline-variant/5">
+                        <div class="relative h-[400px] overflow-hidden">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                data-alt="Modern Indian professional looking at stock market charts on multiple screens in a moody, high-tech office environment"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUfIi3sEgckgC1ac6Z3nuxS02447oLxyPVcHv7-eHpArxSMS96yag3X__kdMHmb6f9ObRVqJkFFmQPLyKwRb4PuEjjGmSQkxsYplpbPDlH1_5bxkV_8uqOKlsBzwohEqL1tD3km6lDBsL8v7A5gkWDomRZXjb2Qd0rvXUwBK-aDCRqye3_gWqvz7hEh7aUgvYSRof1Tdid16PTIKiT1B3-ifta7Qn17tLaEF6ONFOvLZq95NLta1g88zcxC7CIEDG9tIq8FN8X3cRY" />
+                            <div class="absolute top-6 left-6">
+                                <span
+                                    class="bg-secondary text-on-secondary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">Investing</span>
+                            </div>
+                        </div>
+                        <div class="p-10">
+                            <div
+                                class="flex items-center gap-4 text-on-surface-variant text-xs mb-4 font-bold uppercase tracking-widest">
+                                <span>April 12, 2026</span>
+                                <span>•</span>
+                                <span>12 Min Read</span>
+                            </div>
+                            <h3
+                                class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 group-hover:text-primary transition-colors">
+                                Why Index Funds are the Sovereign's Choice for 2026</h3>
+                            <p class="text-on-surface-variant text-lg leading-relaxed mb-6">Stop chasing individual
+                                stocks. Discover why the wealthiest Indian families are moving their capital into
+                                broad-market index funds this decade.</p>
+                            <span class="inline-flex items-center gap-2 text-primary font-bold">READ ARTICLE <span
+                                    class="material-symbols-outlined">arrow_forward</span></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Secondary Cards -->
+                <div class="md:col-span-4 flex flex-col gap-8">
+                    <div
+                        class="bg-surface-container-low rounded-[2rem] overflow-hidden transition-all border border-outline-variant/5 group cursor-pointer">
+                        <div class="relative h-48">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Macro photo of gold coins stacked neatly on a dark reflective surface with green neon accents"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaz0LijnLllAGKk5lAAT9kGYijMXj45cmbTibg_7k_W5HLG6k8fav8BLZGtds3bQCTe-3fgebvIzlnO35rfLIoFzscnXYGolkH3jNanb0LrF50lR7N7gPrminY47m7LV_1PEVir83lDiIhrp3469ZvFLtWlthL01faQs4JOgjayYfFK7PNGk3DB6qaW5tcZshPhcpEDHta0faw-KVkBue9ryxpt6ZcZzhQ9XBLD6n--b2ER2Wi9jTvPmpacQKJNbOp2P3KCHey3dzi" />
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="bg-primary-container text-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Saving</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">The 50/30/20 Rule Reimagined</h4>
+                            <p class="text-on-surface-variant text-sm line-clamp-2">How to adapt traditional budgeting
+                                for the high-inflation economy of modern India.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-container-low rounded-[2rem] overflow-hidden transition-all border border-outline-variant/5 group cursor-pointer">
+                        <div class="relative h-48">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Digital representation of credit card chips and security layers in dark green and metallic gold theme"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFzbCv_cvly7SEx8pe9x_Wz4oSanQ45yBM6oSLrx8zt1ZNZg8KOg4OiIlLxlLF7KSUHKY64135pVLhDafn_vKOJ59vjsbeqgziLEuy6gfgtFUfAOUQ5H6FC-wGpKCvDPm1qG6KZw22qeDNioc8AcGEhEyrna2LmCCH2R_oSfl3GWYtUtkH6qNrdyQ-pdWZXmPv-7eSG7ONWFFYIYGJThZISudaOyoQCTbZh7IspOIf5AwGJ892PlQHjsyk9OeLDjoTDXzMbkPtCjHn" />
+                            <div class="absolute top-4 left-4">
+                                <span
+                                    class="bg-tertiary-container text-tertiary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">Credit
+                                    Cards</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2">Maximizing Reward Sovereignty</h4>
+                            <p class="text-on-surface-variant text-sm line-clamp-2">Our top 3 credit card picks for
+                                lifestyle luxury and zero-cost travel in 2026.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Categories Section -->
+        <section class="bg-surface-container py-32 px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Explore the Vault</h2>
+                    <p class="text-on-surface-variant max-w-xl mx-auto">Master every pillar of your personal economy
+                        with our expert-led modules.</p>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+                    <!-- Category Card -->
+                    <div
+                        class="bg-surface-container-highest p-8 rounded-[1.5rem] text-center hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-on-primary"
+                            data-icon="account_balance">account_balance</span>
+                        <h5 class="font-bold text-sm tracking-tight uppercase">Investing</h5>
+                    </div>
+                    <div
+                        class="bg-surface-container-highest p-8 rounded-[1.5rem] text-center hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-on-primary"
+                            data-icon="savings">savings</span>
+                        <h5 class="font-bold text-sm tracking-tight uppercase">Saving Money</h5>
+                    </div>
+                    <div
+                        class="bg-surface-container-highest p-8 rounded-[1.5rem] text-center hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-on-primary"
+                            data-icon="payments">payments</span>
+                        <h5 class="font-bold text-sm tracking-tight uppercase">Make Money Online</h5>
+                    </div>
+                    <div
+                        class="bg-surface-container-highest p-8 rounded-[1.5rem] text-center hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-on-primary"
+                            data-icon="credit_card">credit_card</span>
+                        <h5 class="font-bold text-sm tracking-tight uppercase">Credit Cards</h5>
+                    </div>
+                    <div
+                        class="bg-surface-container-highest p-8 rounded-[1.5rem] text-center hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-on-primary"
+                            data-icon="calculate">calculate</span>
+                        <h5 class="font-bold text-sm tracking-tight uppercase">Budgeting</h5>
+                    </div>
+                    <div
+                        class="bg-surface-container-highest p-8 rounded-[1.5rem] text-center hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+                        <span class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-on-primary"
+                            data-icon="rocket_launch">rocket_launch</span>
+                        <h5 class="font-bold text-sm tracking-tight uppercase">Side Hustles</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter Signup -->
+        <section id="newsletter" class="py-32 px-8">
+            <div class="max-w-5xl mx-auto bg-primary-container/20 rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-transparent"></div>
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-none">Get our free
+                            weekly money tips.</h2>
+                        <p class="text-on-surface-variant text-lg">Join 10,000+ Indians receiving sovereign financial
+                            wisdom directly in their inbox every Sunday.</p>
+                    </div>
+                    <form class="flex flex-col gap-4"
+                        onsubmit="event.preventDefault(); this.classList.add('hidden'); document.getElementById('newsletter-success').classList.remove('hidden');">
+                        <input required
+                            class="bg-surface-container-high border-none rounded-xl p-5 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
+                            placeholder="Your best email address" type="email" />
+                        <button type="submit"
+                            class="bg-secondary text-on-secondary py-5 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full">
+                            Subscribe Now
+                        </button>
+                        <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold">
+                            Zero Spam. Unsubscribe Anytime.</p>
+                    </form>
+                    <div id="newsletter-success"
+                        class="hidden flex flex-col items-center justify-center bg-surface-container-high/50 rounded-xl p-8 border border-primary/20 text-center">
+                        <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
+                        <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
+                        <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full relative mt-20 bg-[#111411]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 border-t border-[#404941]/15 max-w-7xl mx-auto">
+            <div class="md:col-span-1">
+                <a href="homepageui.html"
+                    class="text-lg font-black text-[#96d5a3] uppercase mb-4 tracking-tighter block hover:text-secondary transition-colors">The
+                    Money Manual</a>
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                    Empowering the modern Indian through radical financial transparency and sovereign wealth strategies.
+                </p>
+                <div class="flex gap-4">
+                    <span
+                        class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">rss_feed</span>
+                    <span class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">mail</span>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Explore</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="homepageui.html">Home</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="categorypage.html">Categories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Company</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="about us.html">About Us</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Legal</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="termsofservice.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-12 pb-16 max-w-7xl mx-auto">
+            <p
+                class="text-[10px] text-on-surface-variant/40 leading-relaxed uppercase tracking-widest border-t border-outline-variant/10 pt-10">
+                Disclaimer: The Money Manual is for educational purposes only. We are not SEBI registered advisors. All
+                financial decisions involve risk; please consult a certified professional before making significant
+                investments.
+            </p>
+            <div class="mt-8 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-[#96d5a3]/40">
+                © 2024 The Money Manual. The Digital Sovereign.
+            </div>
+        </div>
+    </footer>
+    <!-- Newsletter Modal -->
+    <dialog id="newsletter-modal"
+        class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto rounded-3xl w-full max-w-lg shadow-2xl transition-all">
+        <div class="bg-surface-container-high rounded-3xl p-8 relative border border-outline-variant/20">
+            <button onclick="document.getElementById('newsletter-modal').close()"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="text-center mb-8">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">mail</span>
+                <h3 class="text-3xl font-extrabold text-on-surface mb-2">Get our weekly tips.</h3>
+                <p class="text-on-surface-variant">Join 10,000+ Indians receiving sovereign financial wisdom.</p>
+            </div>
+            <form class="flex flex-col gap-4"
+                onsubmit="event.preventDefault(); this.classList.add('hidden'); document.getElementById('modal-success').classList.remove('hidden');">
+                <input required
+                    class="bg-surface-container-highest border border-outline-variant/20 rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
+                    placeholder="Your best email address" type="email" />
+                <button type="submit"
+                    class="bg-secondary text-on-secondary py-4 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full cursor-pointer">Subscribe
+                    Now</button>
+                <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold mt-2">Zero
+                    Spam. Unsubscribe Anytime.</p>
+            </form>
+            <div id="modal-success" class="hidden flex-col items-center justify-center py-4 text-center">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
+                <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
+                <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
+                <button
+                    onclick="document.getElementById('newsletter-modal').close(); setTimeout(() => { document.querySelector('#newsletter-modal form').classList.remove('hidden'); document.getElementById('modal-success').classList.add('hidden'); document.querySelector('#newsletter-modal form').reset(); }, 500);"
+                    class="mt-6 text-sm font-bold text-secondary uppercase tracking-widest hover:underline cursor-pointer">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <script>
+        const modal = document.getElementById('newsletter-modal');
+        modal.addEventListener('click', (e) => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
+            }
+        })
+    </script>
+</body>
+
+</html>

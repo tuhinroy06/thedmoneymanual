@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | THE MONEY MANUAL</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#323632",
+                        "inverse-primary": "#2e6a41",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e1e3dd",
+                        "tertiary-fixed-dim": "#ffb2bb",
+                        "on-error": "#690005",
+                        "on-primary-container": "#87c695",
+                        "secondary-container": "#c68700",
+                        "primary": "#96d5a3",
+                        "on-tertiary-fixed-variant": "#73323d",
+                        "error": "#ffb4ab",
+                        "on-primary": "#00391a",
+                        "inverse-surface": "#e1e3dd",
+                        "on-tertiary": "#571c27",
+                        "on-tertiary-container": "#f79eaa",
+                        "on-tertiary-fixed": "#3c0613",
+                        "tertiary-container": "#75333e",
+                        "surface": "#111411",
+                        "secondary-fixed": "#ffddb0",
+                        "tertiary": "#ffb2bb",
+                        "outline": "#8a9389",
+                        "on-surface": "#e1e3dd",
+                        "surface-variant": "#323632",
+                        "surface-container": "#1d201d",
+                        "background": "#111411",
+                        "on-surface-variant": "#c0c9be",
+                        "inverse-on-surface": "#2e312d",
+                        "primary-container": "#14532d",
+                        "surface-container-lowest": "#0c0f0c",
+                        "surface-dim": "#111411",
+                        "surface-container-low": "#191c19",
+                        "primary-fixed": "#b1f2be",
+                        "primary-fixed-dim": "#96d5a3",
+                        "outline-variant": "#404941",
+                        "on-primary-fixed": "#00210d",
+                        "surface-bright": "#373a36",
+                        "tertiary-fixed": "#ffd9dc",
+                        "on-secondary-fixed": "#281800",
+                        "on-secondary-container": "#3e2800",
+                        "on-secondary": "#442c00",
+                        "secondary": "#ffba46",
+                        "on-primary-fixed-variant": "#12512c",
+                        "surface-tint": "#96d5a3",
+                        "surface-container-high": "#272b27",
+                        "secondary-fixed-dim": "#ffba46",
+                        "on-secondary-fixed-variant": "#614000"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #111411;
+            color: #e1e3dd;
+        }
+
+        .text-sovereign-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+        }
+
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#111411]/80 backdrop-blur-xl shadow-2xl shadow-black/40">
+        <div class="relative flex justify-between items-center w-full px-8 py-4 mx-auto max-w-7xl">
+            <a href="homepageui.html"
+                class="text-2xl font-extrabold tracking-tighter text-[#96d5a3] uppercase hover:scale-105 transition-transform">
+                The Money Manual
+            </a>
+            <div
+                class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-extrabold tracking-tighter absolute left-1/2 -translate-x-1/2">
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="homepageui.html">Home</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors"
+                    href="categorypage.html">Categories</a>
+                <a class="text-[#96d5a3] border-b-2 border-[#96d5a3] pb-1" href="about us.html">About</a>
+                <a class="text-[#96d5a3]/70 hover:text-[#96d5a3] transition-colors" href="contactus.html">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="document.getElementById('newsletter-modal').showModal()"
+                    class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-200 active:scale-95 no-underline cursor-pointer">
+                    Subscribe
+                </button>
+            </div>
+            <div class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="relative min-h-[819px] flex items-center px-8 md:px-24 overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-20">
+                <div
+                    class="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-primary-container/30 to-transparent blur-3xl">
+                </div>
+            </div>
+            <div class="max-w-4xl relative z-10">
+                <span class="label-md uppercase tracking-[0.2em] text-secondary font-bold mb-6 block">Our Vision</span>
+                <h1 class="text-sovereign-display mb-8">
+                    The Sovereignty of <br />
+                    <span
+                        class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">Financial
+                        Freedom</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed max-w-2xl">
+                    We empower digital sovereigns to reclaim their financial destiny. Through architectural precision
+                    and modern wisdom, we dismantle the barriers to true wealth.
+                </p>
+                <div class="mt-12 flex gap-4">
+                    <button
+                        class="bg-primary text-on-primary px-8 py-4 rounded-full font-extrabold flex items-center gap-2 hover:scale-105 transition-all">
+                        Join the Movement
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Our Heritage (Timeline) -->
+        <section class="py-32 px-8 bg-surface-container-low">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+                    <div class="md:col-span-4">
+                        <h2 class="text-4xl font-extrabold text-on-surface mb-6">Our Heritage</h2>
+                        <p class="text-on-surface-variant text-lg leading-relaxed">
+                            A chronicle of evolution. From a small collective of financial architects to a global
+                            authority in digital wealth sovereignty.
+                        </p>
+                    </div>
+                    <div class="md:col-span-8 space-y-16">
+                        <!-- 2018 -->
+                        <div class="flex gap-8 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center text-secondary font-bold z-10">
+                                    2018</div>
+                                <div class="w-px h-full bg-outline-variant/30 mt-4 group-last:hidden"></div>
+                            </div>
+                            <div class="pb-8">
+                                <h3 class="text-2xl font-bold text-primary mb-2">The Inception</h3>
+                                <p class="text-on-surface-variant max-w-lg">Founded in a small workspace in London, THE
+                                    MONEY MANUAL began as a newsletter for high-net-worth digital entrepreneurs seeking
+                                    alternative asset allocation strategies.</p>
+                            </div>
+                        </div>
+                        <!-- 2021 -->
+                        <div class="flex gap-8 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant flex items-center justify-center text-secondary font-bold z-10">
+                                    2021</div>
+                                <div class="w-px h-full bg-outline-variant/30 mt-4 group-last:hidden"></div>
+                            </div>
+                            <div class="pb-8">
+                                <h3 class="text-2xl font-bold text-primary mb-2">The Sovereign Expansion</h3>
+                                <p class="text-on-surface-variant max-w-lg">Scaling to over 500,000 active readers, we
+                                    launched the Digital Sovereignty framework, bridging the gap between legacy banking
+                                    and decentralized finance.</p>
+                            </div>
+                        </div>
+                        <!-- 2024 -->
+                        <div class="flex gap-8 group">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold z-10">
+                                    2024</div>
+                                <div class="w-px h-full bg-transparent mt-4"></div>
+                            </div>
+                            <div class="pb-8">
+                                <h3 class="text-2xl font-bold text-secondary mb-2">The Modern Standard</h3>
+                                <p class="text-on-surface-variant max-w-lg">Today, we stand as the premier destination
+                                    for financial intelligence, serving as the trusted advisor for a new generation of
+                                    wealth builders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- The Architects -->
+        <section class="py-32 px-8">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="text-center mb-24">
+                    <h2 class="text-5xl font-black mb-4">The Architects</h2>
+                    <p class="text-on-surface-variant text-xl">The minds behind the manual.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Elias -->
+                    <div class="group">
+                        <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-highest">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                data-alt="professional portrait of a middle-aged man with sharp features and grey-touched hair, wearing a dark tailored suit in a luxury office setting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBh6tPvVtsMshL3hcjPVy8tgeNUGPUo674RwBiT2libX4UGqzTlw4k5WpjU2-JX3V303dJimCHt9_XZORs81oUiz7cqN1_JnIx--iWKmrqRTr-ON23kLhAJnJzivY_tiTg50JOxK32g_0guEcVVXnB5p-nwGHjeJTrRH4THAut7iUzHHSIP9NwshkBXmDjd8i3IE3qn82SnP2NrFc7bbKLPm-HyqxTpHshrza3SdRTczVxUrZ3EL4gpa6kxIg4CuOtBUQQdZXaXIvQ" />
+                        </div>
+                        <h4 class="text-2xl font-bold text-on-surface">Elias Sterling</h4>
+                        <p class="text-secondary font-medium tracking-wide uppercase text-sm mb-4">Founding Architect
+                            &amp; CEO</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">A veteran of quantitative finance
+                            with a vision for accessible sovereign wealth.</p>
+                    </div>
+                    <!-- Sarah -->
+                    <div class="group">
+                        <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-highest">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                data-alt="portrait of a focused professional woman with sleek dark hair, wearing minimal jewelry and a charcoal blazer against a dark marble background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCphm8JSiBEWnvhcUgXDPYD7e8iijJb7CE2TIjE4X93dGp6isLer-r50osG8EyfCGR-itQdQEVMgo-VOAybocj5gQDY9qgKqq1rHvAjhsIlVsVDoDSiElQsM_jXASY110Hk3VwK_kQEFKG2lwFPyNvC5Q-I-tg-IWHMSp9SN0ZieUy64Ebuwm8km5obJ5qFbNvqEb5Velr_tKlKPTZ56mtyyrh9y0fJ52CCgRbgHhgikcxBBrXwrBb55q-TGFd8QtIwUDDuJIfgaASl" />
+                        </div>
+                        <h4 class="text-2xl font-bold text-on-surface">Sarah Chen</h4>
+                        <p class="text-secondary font-medium tracking-wide uppercase text-sm mb-4">Chief Investment
+                            Strategist</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Pioneer in cross-border wealth
+                            preservation and emerging market dynamics.</p>
+                    </div>
+                    <!-- Marcus -->
+                    <div class="group">
+                        <div class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-highest">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                data-alt="confident young man with trimmed beard in a high-tech studio environment, warm cinematic lighting, looking directly into the camera"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeNUf-oaZLn05ZN0VaQHRZdLPzp1Jo20xgy21xwPTbVYcxIyzkS13yL7HP0FO4SAAPHz18wRDvsmfImmlJ1hXFI9KZFRH2QXRwPlPzIs80MPzX38qcn7PXyeqaTpQgkNtMYwCGLWrilybixW-ouTuQj2AwKjnZa6bmsT0hDOSsNTIY5KPr8CTQl5HlJ7RlabVo3MK5PBMkBm0DHLADIVf5Qwt1i6yfjw5zbM_9T_5yJKOmaRaBAKN29rMbsHHrAeoofBo1ck2JvJRw" />
+                        </div>
+                        <h4 class="text-2xl font-bold text-on-surface">Marcus Thorne</h4>
+                        <p class="text-secondary font-medium tracking-wide uppercase text-sm mb-4">Head of Digital
+                            Assets</p>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Bridging the gap between traditional
+                            equity and the future of digital currency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact CTA (Bento Style) -->
+        <section class="py-32 px-8">
+            <div class="max-w-screen-xl mx-auto">
+                <div class="bg-surface-container-low rounded-3xl p-12 md:p-24 overflow-hidden relative">
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
+                        <span class="material-symbols-outlined text-[20rem]"
+                            style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                    </div>
+                    <div class="relative z-10 text-center max-w-2xl mx-auto">
+                        <h2 class="text-5xl font-extrabold mb-8">Ready to define your own <span
+                                class="text-secondary">Sovereignty?</span></h2>
+                        <p class="text-on-surface-variant text-xl mb-12">Connect with our team to explore exclusive
+                            partnerships or contribute to the manual.</p>
+                        <div class="flex flex-col md:flex-row justify-center gap-6">
+                            <a class="bg-primary text-on-primary px-10 py-5 rounded-full font-black text-lg hover:shadow-[0_0_30px_rgba(150,213,163,0.3)] transition-all"
+                                href="mailto:contact@moneymanual.com">
+                                Establish Contact
+                            </a>
+                            <a class="border border-outline-variant text-on-surface px-10 py-5 rounded-full font-black text-lg hover:bg-surface-container-highest transition-all"
+                                href="#">
+                                View Intelligence Reports
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full relative mt-20 bg-[#111411]">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 border-t border-[#404941]/15 max-w-7xl mx-auto">
+            <div class="md:col-span-1">
+                <a href="homepageui.html"
+                    class="text-lg font-black text-[#96d5a3] uppercase mb-4 tracking-tighter block hover:text-secondary transition-colors">The
+                    Money Manual</a>
+                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                    Empowering the modern Indian through radical financial transparency and sovereign wealth strategies.
+                </p>
+                <div class="flex gap-4">
+                    <span
+                        class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">rss_feed</span>
+                    <span class="material-symbols-outlined text-primary hover:text-secondary cursor-pointer">mail</span>
+                </div>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Explore</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="homepageui.html">Home</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="categorypage.html">Categories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Company</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="about us.html">About Us</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h6 class="font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-secondary font-bold mb-6">
+                    Legal</h6>
+                <ul class="flex flex-col gap-4 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase">
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="privacy policy.html">Privacy Policy</a></li>
+                    <li><a class="text-[#96d5a3]/40 hover:text-[#96d5a3] hover:underline transition-all"
+                            href="termsofservice.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-12 pb-16 max-w-7xl mx-auto">
+            <p
+                class="text-[10px] text-on-surface-variant/40 leading-relaxed uppercase tracking-widest border-t border-outline-variant/10 pt-10">
+                Disclaimer: The Money Manual is for educational purposes only. We are not SEBI registered advisors. All
+                financial decisions involve risk; please consult a certified professional before making significant
+                investments.
+            </p>
+            <div class="mt-8 font-['Plus_Jakarta_Sans'] text-xs tracking-[0.1em] uppercase text-[#96d5a3]/40">
+                © 2024 The Money Manual. The Digital Sovereign.
+            </div>
+        </div>
+    </footer>
+    <!-- Newsletter Modal -->
+    <dialog id="newsletter-modal"
+        class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto rounded-3xl w-full max-w-lg shadow-2xl transition-all">
+        <div class="bg-surface-container-high rounded-3xl p-8 relative border border-outline-variant/20">
+            <button onclick="document.getElementById('newsletter-modal').close()"
+                class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="text-center mb-8">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">mail</span>
+                <h3 class="text-3xl font-extrabold text-on-surface mb-2">Get our weekly tips.</h3>
+                <p class="text-on-surface-variant">Join 10,000+ Indians receiving sovereign financial wisdom.</p>
+            </div>
+            <form class="flex flex-col gap-4"
+                onsubmit="event.preventDefault(); this.classList.add('hidden'); document.getElementById('modal-success').classList.remove('hidden');">
+                <input required
+                    class="bg-surface-container-highest border border-outline-variant/20 rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
+                    placeholder="Your best email address" type="email" />
+                <button type="submit"
+                    class="bg-secondary text-on-secondary py-4 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full cursor-pointer">Subscribe
+                    Now</button>
+                <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold mt-2">Zero
+                    Spam. Unsubscribe Anytime.</p>
+            </form>
+            <div id="modal-success" class="hidden flex-col items-center justify-center py-4 text-center">
+                <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
+                <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
+                <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
+                <button
+                    onclick="document.getElementById('newsletter-modal').close(); setTimeout(() => { document.querySelector('#newsletter-modal form').classList.remove('hidden'); document.getElementById('modal-success').classList.add('hidden'); document.querySelector('#newsletter-modal form').reset(); }, 500);"
+                    class="mt-6 text-sm font-bold text-secondary uppercase tracking-widest hover:underline cursor-pointer">Close</button>
+            </div>
+        </div>
+    </dialog>
+    <script>
+        const modal = document.getElementById('newsletter-modal');
+        modal.addEventListener('click', (e) => {
+            const dialogDimensions = modal.getBoundingClientRect()
+            if (
+                e.clientX < dialogDimensions.left ||
+                e.clientX > dialogDimensions.right ||
+                e.clientY < dialogDimensions.top ||
+                e.clientY > dialogDimensions.bottom
+            ) {
+                modal.close()
+            }
+        })
+    </script>
+</body>
+
+</html>
