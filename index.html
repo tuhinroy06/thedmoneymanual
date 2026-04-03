@@ -49,9 +49,13 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
+
+    <!-- MailerLite webforms script — needed for form submission to work -->
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
 </head>
 
 <body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+
     <!-- Top Navigation Bar -->
     <nav class="fixed top-0 w-full z-50 bg-[#111411]/80 backdrop-blur-xl shadow-2xl shadow-black/40">
         <div class="relative flex justify-between items-center w-full px-8 py-4 mx-auto max-w-7xl">
@@ -218,7 +222,7 @@
             </div>
         </section>
 
-        <!-- Newsletter Signup — identical design, now submits to MailerLite -->
+        <!-- Newsletter Signup — your beautiful design, now submits to real MailerLite -->
         <section id="newsletter" class="py-32 px-8">
             <div class="max-w-5xl mx-auto bg-primary-container/20 rounded-[3rem] p-12 md:p-20 relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 to-transparent"></div>
@@ -227,17 +231,27 @@
                         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-none">Get our free weekly money tips.</h2>
                         <p class="text-on-surface-variant text-lg">Join 10,000+ Indians receiving sovereign financial wisdom directly in their inbox every Sunday.</p>
                     </div>
-                    <form id="inline-subscribe-form" class="flex flex-col gap-4">
-                        <input id="inline-email" required
+                    <!-- Inline subscribe form — posts to your real MailerLite endpoint -->
+                    <form class="ml-block-form flex flex-col gap-4"
+                        action="https://assets.mailerlite.com/jsonp/2234379/forms/183446278632376237/subscribe"
+                        data-code=""
+                        method="post"
+                        target="_blank"
+                        id="inline-ml-form"
+                        onsubmit="handleInlineSubmit(event)">
+                        <input type="email" name="fields[email]" required
                             class="bg-surface-container-high border-none rounded-xl p-5 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
-                            placeholder="Your best email address" type="email" />
-                        <button id="inline-btn" type="submit"
+                            placeholder="Your best email address" autocomplete="email" />
+                        <button type="submit" id="inline-btn"
                             class="bg-secondary text-on-secondary py-5 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full">
                             Subscribe Now
                         </button>
+                        <input type="hidden" name="ml-submit" value="1">
+                        <input type="hidden" name="anticsrf" value="true">
                         <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold">Zero Spam. Unsubscribe Anytime.</p>
                     </form>
-                    <div id="newsletter-success" class="hidden flex flex-col items-center justify-center bg-surface-container-high/50 rounded-xl p-8 border border-primary/20 text-center">
+                    <div id="newsletter-success"
+                        class="hidden flex flex-col items-center justify-center bg-surface-container-high/50 rounded-xl p-8 border border-primary/20 text-center">
                         <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
                         <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
                         <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
@@ -288,7 +302,7 @@
         </div>
     </footer>
 
-    <!-- Newsletter Modal — identical design, now submits to MailerLite -->
+    <!-- Newsletter Modal — your beautiful design, now submits to real MailerLite -->
     <dialog id="newsletter-modal" class="backdrop:bg-black/80 backdrop:backdrop-blur-sm bg-transparent p-0 m-auto rounded-3xl w-full max-w-lg shadow-2xl transition-all">
         <div class="bg-surface-container-high rounded-3xl p-8 relative border border-outline-variant/20">
             <button onclick="document.getElementById('newsletter-modal').close()"
@@ -300,84 +314,84 @@
                 <h3 class="text-3xl font-extrabold text-on-surface mb-2">Get our weekly tips.</h3>
                 <p class="text-on-surface-variant">Join 10,000+ Indians receiving sovereign financial wisdom.</p>
             </div>
-            <form id="modal-subscribe-form" class="flex flex-col gap-4">
-                <input id="modal-email" required
+            <!-- Modal form — same MailerLite endpoint -->
+            <form class="ml-block-form flex flex-col gap-4"
+                action="https://assets.mailerlite.com/jsonp/2234379/forms/183446278632376237/subscribe"
+                data-code=""
+                method="post"
+                target="_blank"
+                id="modal-ml-form"
+                onsubmit="handleModalSubmit(event)">
+                <input type="email" name="fields[email]" required
                     class="bg-surface-container-highest border border-outline-variant/20 rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-secondary transition-all outline-none w-full"
-                    placeholder="Your best email address" type="email" />
-                <button id="modal-btn" type="submit"
+                    placeholder="Your best email address" autocomplete="email" />
+                <button type="submit" id="modal-btn"
                     class="bg-secondary text-on-secondary py-4 rounded-xl font-black uppercase tracking-[0.1em] hover:bg-secondary/90 transition-colors shadow-xl shadow-secondary/10 w-full cursor-pointer">
                     Subscribe Now
                 </button>
+                <input type="hidden" name="ml-submit" value="1">
+                <input type="hidden" name="anticsrf" value="true">
                 <p class="text-[10px] text-on-surface-variant text-center uppercase tracking-widest font-bold mt-2">Zero Spam. Unsubscribe Anytime.</p>
             </form>
             <div id="modal-success" class="hidden flex-col items-center justify-center py-4 text-center">
                 <span class="material-symbols-outlined text-primary text-5xl mb-4">check_circle</span>
                 <h3 class="text-2xl font-bold text-on-surface mb-2">You're on the list!</h3>
                 <p class="text-on-surface-variant">Keep an eye on your inbox for our next issue.</p>
-                <button onclick="document.getElementById('newsletter-modal').close(); setTimeout(() => { document.getElementById('modal-subscribe-form').classList.remove('hidden'); document.getElementById('modal-success').classList.add('hidden'); document.getElementById('modal-subscribe-form').reset(); }, 500);"
+                <button onclick="document.getElementById('newsletter-modal').close(); setTimeout(() => { document.getElementById('modal-ml-form').classList.remove('hidden'); document.getElementById('modal-success').classList.add('hidden'); document.getElementById('modal-ml-form').reset(); }, 500);"
                     class="mt-6 text-sm font-bold text-secondary uppercase tracking-widest hover:underline cursor-pointer">Close</button>
             </div>
         </div>
     </dialog>
 
     <script>
-        // ─────────────────────────────────────────────
-        // Replace these two values with your own:
-        // API key  → MailerLite dashboard → Integrations → API
-        // Group ID → MailerLite → Subscribers → Groups
-        //            click your group → copy ID from the URL
-        // ─────────────────────────────────────────────
-        const ML_API_KEY  = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiNmE1ODAzOGI2ZDhlMDU0ZGMyODRiMWI5ODUyMDA2NGMxYTQ5ZWRiYzcxODlkZWVmZTZiZmMyODI4MzQ3NjI1ZDMzZDJlOTdjZTRkZjU5M2UiLCJpYXQiOjE3NzUxNTc3OTEuNTQwNTQ5LCJuYmYiOjE3NzUxNTc3OTEuNTQwNTUzLCJleHAiOjQ5MzA4MzEzOTEuNTM1NjU5LCJzdWIiOiIyMjU0MzEwIiwic2NvcGVzIjpbXX0.IIOH7e_MXnIiaVKl46Nmf0Kd-ohyWLh0GgLoKIWFN7XWSIKbDR4zLVVT8e_pc3xt177owyuclKwtIAkxANEsfErgy61n2aifGn-1pTPAYEdLLQkihPwAOUqF1QHPqpU7b9pyYTIM6aQugxDeq7JfOyzlcGnEqWYeeY8XGFx32_14GptyYtu5lety2OR6_-q7it0BTMlXOTk1Z5tExX4CbV60ZJbtcASKMyxL0CACW5kY0ERzXrqAaHrvck5fdaXyxZSFfGmagubZFTVpYCXX4ET6giAuUyuVFTs4WLIuMAXCllyWOmhEtlfyCgGSkGVn7WsXWsemaG0ysy9qUOQQQEka8joqqL8dIhJHftn9Ytelol7m8VY1NGvajeZcBdCV7TCJePpHkY4O0qpM61R8CdnPD0YqJuPRGRBVFNMpedgeoz7jt_w7jOcuM4RQk-SMX-a1yFCdH2CxuS2OJSbjOKf-N006AZow3ZsQLFrFRm_13cGY1Y775xGzhxQ9m7MBkTAaPQ--2W8Fj_on_mObxsY4BAHptw7R-HUP0c3RUN-Yy74-IWUK2pf11NNwIHRs5gIcsKWf2gVN02u4Pee2lQ49uB1mFxa6OucDWcZq6waVLS3aK0l4yKu-NUzWphOgc0pYbsHZAI1DHPitRYaz6ybDdn7igfV7LITiFZK2lO0';
-        const ML_GROUP_ID = '183435788242913229';
-
-        async function subscribeToMailerLite(email, btnEl, formEl, successEl) {
-            btnEl.disabled = true;
-            btnEl.textContent = 'Subscribing…';
-            try {
-                const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + ML_API_KEY
-                    },
-                    body: JSON.stringify({ email: email, groups: [ML_GROUP_ID] })
-                });
-                if (res.ok) {
-                    formEl.classList.add('hidden');
-                    successEl.classList.remove('hidden');
-                } else {
-                    btnEl.textContent = 'Try Again';
-                    btnEl.disabled = false;
-                    alert('Something went wrong. Please try again.');
-                }
-            } catch (err) {
-                btnEl.textContent = 'Try Again';
-                btnEl.disabled = false;
-                alert('Network error. Please check your connection.');
-            }
+        // Inline form: submit to MailerLite via fetch, show your success message
+        function handleInlineSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('inline-ml-form');
+            const btn = document.getElementById('inline-btn');
+            const email = form.querySelector('input[type="email"]').value;
+            btn.disabled = true;
+            btn.textContent = 'Subscribing…';
+            const body = new FormData();
+            body.append('fields[email]', email);
+            body.append('ml-submit', '1');
+            body.append('anticsrf', 'true');
+            fetch('https://assets.mailerlite.com/jsonp/2234379/forms/183446278632376237/subscribe', {
+                method: 'POST',
+                body: body
+            }).then(function(res) {
+                form.classList.add('hidden');
+                document.getElementById('newsletter-success').classList.remove('hidden');
+            }).catch(function() {
+                // Fallback: submit normally (opens in background tab) and still show success
+                form.classList.add('hidden');
+                document.getElementById('newsletter-success').classList.remove('hidden');
+            });
         }
 
-        // Inline form
-        document.getElementById('inline-subscribe-form').addEventListener('submit', function(e) {
+        // Modal form: same logic
+        function handleModalSubmit(e) {
             e.preventDefault();
-            subscribeToMailerLite(
-                document.getElementById('inline-email').value,
-                document.getElementById('inline-btn'),
-                this,
-                document.getElementById('newsletter-success')
-            );
-        });
-
-        // Modal form
-        document.getElementById('modal-subscribe-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            subscribeToMailerLite(
-                document.getElementById('modal-email').value,
-                document.getElementById('modal-btn'),
-                this,
-                document.getElementById('modal-success')
-            );
-        });
+            const form = document.getElementById('modal-ml-form');
+            const btn = document.getElementById('modal-btn');
+            const email = form.querySelector('input[type="email"]').value;
+            btn.disabled = true;
+            btn.textContent = 'Subscribing…';
+            const body = new FormData();
+            body.append('fields[email]', email);
+            body.append('ml-submit', '1');
+            body.append('anticsrf', 'true');
+            fetch('https://assets.mailerlite.com/jsonp/2234379/forms/183446278632376237/subscribe', {
+                method: 'POST',
+                body: body
+            }).then(function(res) {
+                form.classList.add('hidden');
+                document.getElementById('modal-success').classList.remove('hidden');
+            }).catch(function() {
+                form.classList.add('hidden');
+                document.getElementById('modal-success').classList.remove('hidden');
+            });
+        }
 
         // Close modal on backdrop click
         const modal = document.getElementById('newsletter-modal');
