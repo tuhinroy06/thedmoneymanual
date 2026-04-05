@@ -392,7 +392,7 @@
                 document.getElementById('modal-success').classList.remove('hidden');
             });
         }
-
+        
         // Close modal on backdrop click
         const modal = document.getElementById('newsletter-modal');
         modal.addEventListener('click', (e) => {
@@ -404,3 +404,57 @@
     </script>
 </body>
 </html>
+<!-- Dynamic Posts Grid -->
+<div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <!-- Posts load here automatically -->
+  <div class="col-span-3 text-center text-on-surface-variant py-12">Loading posts...</div>
+</div>
+
+<script>
+async function loadPosts() {
+  try {
+    const res = await fetch(
+      'https://api.github.com/repos/tuhinroy06/thedmoneymanual/contents/posts?ref=auto-posts1'
+    );
+    const files = await res.json();
+
+    // Filter only .html files, exclude placeholder
+    const posts = files.filter(f => f.name.endsWith('.html') && f.name !== 'placeholder.txt' && f.name !== 'index.html');
+
+    if (posts.length === 0) {
+      document.getElementById('posts-grid').innerHTML = '<p class="text-on-surface-variant">No posts yet.</p>';
+      return;
+    }
+
+    // Build cards
+    const cards = posts.reverse().map(file => {
+      // Convert slug to readable title
+      const slug = file.name.replace('.html', '');
+      const title = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const url = `posts/${file.name}`;
+
+      return `
+        <article class="bg-surface-container-low rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-black/60 border border-outline-variant/5 group">
+          <div class="p-8">
+            <div class="flex items-center gap-3 text-on-surface-variant text-xs mb-4 font-bold uppercase tracking-widest">
+              <span>Latest</span><span>&#8226;</span><span>8 Min Read</span>
+            </div>
+            <h3 class="text-xl font-extrabold tracking-tight mb-3 group-hover:text-primary transition-colors">
+              <a href="${url}" style="text-decoration:none;color:inherit;">${title}</a>
+            </h3>
+            <a class="inline-flex items-center gap-2 text-primary font-bold text-sm" href="${url}">
+              READ ARTICLE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </article>`;
+    }).join('');
+
+    document.getElementById('posts-grid').innerHTML = cards;
+
+  } catch(err) {
+    document.getElementById('posts-grid').innerHTML = '<p class="text-on-surface-variant">Could not load posts.</p>';
+  }
+}
+
+loadPosts();
+</script>
